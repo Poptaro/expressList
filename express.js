@@ -12,6 +12,12 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "todo.html"));
 });
 
+// homepage
+app.get("/flex", function (req, res) {
+  app.use(express.static(path.join(__dirname)));
+  res.sendFile(path.join(__dirname, "flex.html"));
+});
+
 let todolist = [];
 
 //acquire whats on the list AT THE MOMENT

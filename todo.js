@@ -2,6 +2,8 @@ const unorderedList = document.querySelector('#ulList')
 const startButton = document.querySelector('#startButton')
 const listInput = document.querySelector('#listInput')
 const formInput = document.querySelector('#formInput')
+const createButton = document.querySelector('.createButton')
+const myInput = document.getElementById('myInput')
 
 
 
@@ -85,6 +87,11 @@ function clearTodo() {
 document.addEventListener('DOMContentLoaded', async () => {
     getTodo()
 })
+
+createButton.addEventListener('shown.bs.modal', () => {
+    myInput.focus()
+})
+
 
 startButton.addEventListener('click', () => {
     if(listInput.value.length > 1){

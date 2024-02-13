@@ -1,36 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="todo.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="todo.css" />
+    <link rel="stylesheet" href="todoModal.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
     <title>Todo List</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="navbar">
+      <p class="navbarText">My To-do</p>
+    </div>
 
-    
-
-    <div>
-        <h1>
-            HeWOOOO TODOLIST
-        </h1>
+    <div class="leadTitleDiv">
+      <h1 class="leadTitle">HeWOOOO TODOLIST</h1>
+      <button type="button" class="createButton btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#createModal">
+        <p class="createP">
+        <span class="me-2 plus fw-bold">+</span><span>Create New</span>
+      </p>
+      </button>
     </div>
     <div>
-        <h2>To Do List</h2>
+      <form id="formInput">
+        <input type="text" id="listInput" />
+        <button type="button" class="btn btn-primary" id="startButton">
+          button
+        </button>
+      </form>
+
+      <ul id="ulList"></ul>
+    </div>
+    <div class="noList">
+      <p class="empty">There are no lists<br>To create one by selecting button above</p>
+    </div>
+
+
+
+<!-- Create Task Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" id="modalBox">
+        <div id="modalTitle">
+          <p id="exampleModalLabel">Create a list</p>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>   -->
+        </div>
+        <div id="modalBody">
+          <p id ="nameOfList" style="color: var(--Gray-Gray-9, #212529)">Name of list <span style="color:#F03E3E">*</span></p>
+      </div>
+      <div id="listName">
+        <input type="text" id="listModalInput" placeholder="Enter something descriptive">
+      </div>
+      <div class="limiter">
+        <p class="limiterText">0/32 Characters</p>
+      </div>
+      <div class="divider">
+      </div>
+      <div>
         <form id="formInput">
-            <input type="text" id="listInput">
-            <button type="button" class=" btn btn-primary" id="startButton">button</button>
+          <input type="text"class="mainTodoInput" id="listInput" placeholder="Add list item">
         </form>
+      </div>
+      <div class="listMax">
+        <p>+  Add list item (10 max)</p>
+      </div>
+        <div id="modalFooter">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="startButton">Create</button>
+        </div>
+
+
+      </div>
+
         
-        <ul id="ulList">
-        </ul>
     </div>
+  </div>
+</div>
 
 
-    <!-- Script tag placed at bottom so it the DOM can load first then read the script tag(prevents usage of DOMContentLoaded Listener here) -->
     <script src="todo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+  </body>
 </html>

@@ -1,0 +1,70 @@
+#modalBox {
+    width: 504px;
+    height: 391px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 37px;
+    padding-right: 37px;
+    flex-direction: column !important;
+    justify-content: flex-start;
+    align-items: normal !important;
+    border-bottom: 0 !important;
+    border-radius: 20px !important;
+}
+
+#exampleModalLabel {
+    font-size: 20px !important;
+    font-weight: 600;
+}
+#modalBody {
+    display: flex;
+    align-items: flex-start;
+}
+#nameOfList {
+    margin-bottom: 4px;
+}
+
+.limiter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.divider {
+    border-bottom: 1px solid #C1C2C5;
+    width: 430px;
+    margin-bottom: 12px;
+}
+
+.mainTodoInput {
+    width: 100% !important;
+    border: 1px solid var(--Gray-Gray-4, #CED4DA)
+}
+
+.listMax {
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 32px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--Dark-Dark-2, #909296);
+
+}
+#listInput::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--Gray-Gray-5, #ADB5BD)
+}
+#listModalInput {
+    width: 100% !important;
+    border: 1px solid var(--Gray-Gray-4, #CED4DA)
+}
+#listModalInput::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--Gray-Gray-5, #ADB5BD)
+}
+
+#modalFooter {
+    display: flex;
+    justify-content: end;
+}
