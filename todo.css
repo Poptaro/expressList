@@ -23,10 +23,11 @@ body, html {
 
 .leadTitleDiv {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 32px;
   padding-left: 40px;
   padding-right: 40px;
+  padding-bottom: 32px;
   justify-content: space-between;
 }
 .leadTitle {
@@ -44,6 +45,19 @@ body, html {
 .plus {
     padding-bottom: 8px !important
 }
+
+#listInput {
+  padding-bottom: 4px;
+  width: 720px;
+}
+
+#listInput::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--Gray-Gray-5, #ADB5BD);
+
+}
+
 
 .createP {
     margin-top: -4.5px;

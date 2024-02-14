@@ -18,37 +18,34 @@
     </div>
 
     <div class="leadTitleDiv">
-      <h1 class="leadTitle">HeWOOOO TODOLIST</h1>
-      <button type="button" class="createButton btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#createModal">
+      <form id="formInput">
+        <input type="text" id="listInput" placeholder="Enter something">
+      </form>
+      <button type="button" class="createButton btn btn-dark rounded-pill" id="startButton">
         <p class="createP">
         <span class="me-2 plus fw-bold">+</span><span>Create New</span>
       </p>
       </button>
     </div>
     <div>
-      <form id="formInput">
-        <input type="text" id="listInput" />
-        <button type="button" class="btn btn-primary" id="startButton">
-          button
-        </button>
-      </form>
-
-      <ul id="ulList"></ul>
+      <ul id="ulList">
+        
+      </ul>
     </div>
     <div class="noList">
-      <p class="empty">There are no lists<br>To create one by selecting button above</p>
+      <p class="empty">There are no lists<br>To create one by selecting the "Create New" button above</p>
     </div>
 
 
 
 <!-- Create Task Modal -->
-<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header" id="modalBox">
         <div id="modalTitle">
           <p id="exampleModalLabel">Create a list</p>
-          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>   -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>  
         </div>
         <div id="modalBody">
           <p id ="nameOfList" style="color: var(--Gray-Gray-9, #212529)">Name of list <span style="color:#F03E3E">*</span></p>
@@ -80,7 +77,7 @@
         
     </div>
   </div>
-</div>
+</div> -->
 
 
     <script src="todo.js"></script>

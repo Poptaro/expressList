@@ -4,7 +4,9 @@ const listInput = document.querySelector('#listInput')
 const formInput = document.querySelector('#formInput')
 const createButton = document.querySelector('.createButton')
 const myInput = document.getElementById('myInput')
+const noList = document.querySelector('.noList')
 
+const unorderedListLength = document.querySelector('#ulList').getElementsByTagName('li')
 
 
 async function acquireList() {
@@ -64,7 +66,12 @@ async function getTodo() {
         const removeButton = document.createElement('button')
         removeButton.className = "btn btn-danger btn-sm"
         removeButton.innerHTML = 'REMOVE'
-        removeButton.onclick = () => removeListItem(obj.id)
+        removeButton.addEventListener('click', async () => {
+                await removeListItem(obj.id)
+                if(unorderedListLength.length >= 1){
+                    noList.style.display = "flex"
+                }
+        })
         listItem.appendChild(removeButton)
 
         //edit list item
@@ -72,14 +79,25 @@ async function getTodo() {
         editButton.className = "btn btn-info btn-sm"
         editButton.innerHTML = 'EDIT'
         editButton.onclick = () => editListItem(obj.id)
+
         listItem.appendChild(editButton)
 
 
     })
 }
 
+function list() {
+    console.log(unorderedListLength.length)
+}
+
 function clearTodo() {
  unorderedList.innerHTML = '';
+}
+
+function empty() {
+    if(unorderedListLength.length == 0){
+        noList.style.display = "block"
+    }
 }
 
 
@@ -93,18 +111,26 @@ createButton.addEventListener('shown.bs.modal', () => {
 })
 
 
-startButton.addEventListener('click', () => {
+startButton.addEventListener('click', async () => {
     if(listInput.value.length > 1){
-        postItem()
-        getTodo()
+        await postItem()
+        await getTodo()
+        
+    }
+    if(unorderedListLength.length >= 1){
+        noList.style.display = "none"
     }
     
 })
 
-formInput.addEventListener('submit', (event) => {
+formInput.addEventListener('submit', async (event) => {
     event.preventDefault()
     if(listInput.value.length > 1){
-        postItem()
-        getTodo()
+        await postItem()
+        await getTodo()
+        
+    }
+    if(unorderedListLength.length >= 1){
+        noList.style.display = "none"
     }
 })
